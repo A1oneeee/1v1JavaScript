@@ -27,26 +27,40 @@
     </header>
     <!-- DIV CONTAIN MESSAGES -->
     <div class="discussion">
-        <div class="me">
-            <p>Bonjour à toi !</p>
-            <p class="date">10:30</p>
+        <div class="messageRight">
+            <p class="me">Bonjour à toi !</p>
+            <p class="date_right">10:30</p>
         </div>
-        <div class="cor">
-            <p>Salut !</p>
-            <p class="date">10:34</p>
+        <div class="messageLeft">
+            <p class="cor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt porro voluptas quam molestias! Id accusamus repudiandae soluta assumenda laboriosam obcaecati, ipsum dolore animi eaque, perspiciatis inventore! Quia aperiam dicta id.</p>
+            <p class="date_left">10:34</p>
         </div>
-        <div class="cor">
-            <p>Cava?</p>
-            <p class="date">10:35</p>
+        <div class="messageLeft">
+            <p class="cor">Cava?</p>
+            <p class="date_left">10:35</p>
+        </div>
+        <div class="messageRight">
+            <p class="me">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi laboriosam quas reprehenderit quidem rem deleniti itaque voluptatibus molestiae voluptatum tempora. Illo mollitia, aut amet repellat alias voluptatem blanditiis commodi esse.</p>
+            <p class="date_right">10:39</p>
+        </div>
+        <div class="messageRight">
+            <p class="me">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi laboriosam quas reprehenderit quidem rem deleniti itaque voluptatibus molestiae voluptatum tempora. Illo mollitia, aut amet repellat alias voluptatem blanditiis commodi esse.</p>
+            <p class="date_right">10:40</p>
         </div>
     </div>
     <!-- DIV SEND MESSAGE -->
     <div class="bottom">
+        <div class="deposit" id="deposit">
+            <p id="depositP">Ajout d'un ou plusieurs fichiers</p>
+            <button id="cancel" class="cancel"><img src="assets/effacer.png"/></button>
+        </div>
         <form action="">
             <!-- <input placeholder="Message..." autocomplete="off" id="msg"/> -->
             <textarea placeholder="Message..." autocomplete="off" id="msg"></textarea>
             <button>Envoyer</button>
         </form>
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
