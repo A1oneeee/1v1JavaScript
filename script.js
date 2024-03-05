@@ -51,12 +51,18 @@ deposit.addEventListener('drop', (event) => {
  */
 function handleFiles(files) {
     // Traitement des fichiers ici
+    let verif = false;
     for (const file of files) {
         if(file.size > 5000){
-            errorFile.style.display = 'flex';
+            // The size is too much
+            verif = true;
             continue;
         }
+        // Add to the list for adding in the page
         maListe.push(file);
+    }
+    if(verif == true){
+        errorFile.style.display = 'flex';
     }
 }
 function preventDefaults(event) {
