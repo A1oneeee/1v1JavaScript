@@ -18,17 +18,25 @@ body{
 }
 
 /* HEADER */
+/*
+ * For the top of tha app, logo + title
+ */
 header{
     position: fixed;
-    background: rgb(15, 15, 15, 0.9);
-    width: 100%;
-    height: 50px;
     top: 0;
     left: 0;
+
+    background: rgb(15, 15, 15, 0.7);
+
+    width: 100%;
+    height: 50px;
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
+
     border-radius: 0 0 20px 20px;
+    backdrop-filter: blur(5px);
 }
 header .top{
     display: flex;
@@ -39,78 +47,106 @@ header .logo {
     margin-right: 20px;
 }
 header .title {
+    color: white;
+
     font-size: 20px;
     margin-left: 20px;
-    color: white;
-    text-align: center;
+    
     display: flex;
+    text-align: center;
     align-items: center;
 }
 
 /* DISCUSSION */
+/*
+ * For the discussion fil, messages the we receive and that we send
+ * We take ofc the form for the date that the message was send
+ */
 .discussion {
+    margin-top: 5px;
     padding-top: 50px;
     padding-bottom: 70px;
-    margin-top: 5px;
+
     width: 100%;
+
     display: flex;
     flex-direction: column;
 }
 .discussion .messageRight, .discussion .messageLeft {
-    
     color:white;
-    align-self: flex-end;
+    
     margin-top: 10px;
     padding-left: 20px;
+    padding-right: 10px;
+
+    align-self: flex-end;
 }
 .discussion .messageLeft {
     color:white;
-    align-self: flex-start;
-    padding-left: 0;
+
+    padding-left: 10px;
     padding-right: 20px;
+
+    align-self: flex-start;
 }
 .discussion .me, .discussion .cor {
-    background-color: #0084ff;
-    padding: 5px 10px 5px 10px;
-    margin: 5px;
-    border-radius: 10px 10px 0 10px;
+    background-color: #0177e6;
+
     max-width: 500px;
+    margin: 5px;
+    padding: 5px 10px 5px 10px;
+    
+    border-radius: 10px 10px 0 10px;
+    
 }
 .discussion .cor {
     background-color: #0413e0;
+
     border-radius: 10px 10px 10px 0;
 }
 .discussion .date_left, .discussion .date_right{
+    color: rgb(158, 158, 158);
+
     margin-top: -2px;
     margin-left: 5px;
-    color: rgb(158, 158, 158);
 }
 .discussion .date_right{
-    display: flex;
     margin-right: 5px;
+
+    display: flex;
     flex-direction: row-reverse;
 }
 
 /* BOTTOM */
+/*
+ * For the input message and the file that the user want to send
+ * with the button(s) (on for sending, one for cancel the files input)
+ */
 .bottom {
-    width: 100%;
-    background: rgb(12, 12, 12);
-    height: 70px;
     position: fixed;
     bottom: 0;
     left: 0;
-    border-radius: 15px 15px 0 0;
+
+    background: rgb(12, 12, 12);
+
+    width: 100%;
+    height: 70px;
+    
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    border-radius: 15px 15px 0 0;
 }
 .bottom form {
+    position: absolute;
+
     width: 100%;
     height: 100%;
-    position: absolute;
+    
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 .bottom textarea {
     position: relative;
@@ -131,7 +167,7 @@ header .title {
     padding-left: 20px; 
     padding-right: 20px;
     /* norder radius */
-    border-radius: 50px;
+    border-radius: 15px;
 
     /* hide scrollbar firefox ... */
     scrollbar-width: none;
@@ -166,39 +202,94 @@ header .title {
     
 }
 .bottom form button:hover {
-    background-color: #ffcc00; 
+    background-color: #ffcc00;
+
     font-size: 17px;
 }
 
 /* DEPOSIT */
 .deposit {
     position: fixed;
-    width: calc(100% - 14px);
     bottom: 4px;
     left: 5px;
+
+    width: calc(100% - 14px);
     height: 58px;
     z-index: 100;
-    border: dashed rgb(48, 86, 255) 2px;
+
     border-radius: 20px;
+    border: dashed rgb(48, 86, 255) 2px;
+
     display: none;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
     backdrop-filter: blur(20px);
 }
 .deposit p {
-    background-color: rgb(48, 86, 255, 0.5);
     color:whitesmoke;
-    border-radius: 10px;
-    text-align: center;
+    background-color: rgb(48, 86, 255, 0.5);
+
     width: 300px;
+
     padding: 5px 0 5px 0;
+    border-radius: 10px;
+
     user-select: none;
+    text-align: center;
 }
 .bottom .deposit .cancel {
-    display: flex;
-    margin-left: 5px;
-    border: none;
     color: none;
     background-color: transparent;
+
+    margin-left: 5px;
+
+    display: flex;
+    border: none;
     cursor: pointer;
 }
+
+/* ERROR MESSAGE FILE SIZE */
+/*
+ * Div that will ne use for showing error if the file'size is too much
+ */
+ .errorfile{
+    color:rgb(255, 0, 0);
+    font-size: 18px;
+    font-weight: 700;
+
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 9999;
+
+    width: 100%;
+    height: 100%;
+
+    display:none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+
+    backdrop-filter: blur(10px);
+ }
+ .errorfile p {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+ }
+ .errorfile button {
+    color: none;
+    background-color: transparent;
+
+    display: flex;
+    border: none;
+    cursor: pointer;
+
+    border-radius: 50px;
+ }
+ .errorfile button img{
+    width: 35px;
+ }
