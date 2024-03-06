@@ -1,7 +1,7 @@
 # 1v1JavaScript
 
 Vous trouverez si joint les liens vers les différentes versions de ce chat avec  SOCKET.IO.
-Les premières versions ne gèrent pas les SOCKET. <img src="https://github.com/A1oneeee/1v1JavaScript/assets/116378179/a246bc0f-1b4a-43e5-81f1-9da1419245bd" width="50" />
+Les premières versions ne gèrent pas les SOCKET. <img src="https://github.com/A1oneeee/1v1JavaScript/assets/116378179/a246bc0f-1b4a-43e5-81f1-9da1419245bd" width="25" />
 
 ### Version du projet
 - [develop](https://github.com/A1oneeee/1v1JavaScript/tree/develop)
