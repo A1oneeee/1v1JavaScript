@@ -6,13 +6,17 @@ const sender = document.getElementById('sender');
 const cancelError = document.getElementById('errorCancel');
 const errorFile = document.getElementById('errorFile');
 
+/* DIV RETURN BOTTOM */
+const returnBottomBtn = document.getElementById('returnBottomBtn');
+const returnBottom = document.getElementById('returnBottom');
+
 let maListe = [];
 
 /*
  * Load this function when the page is laoded
  */
 window.onload = scrollToBottom;
-
+window.addEventListener('scroll', actionScrollSeuil);
 
 
 
@@ -35,6 +39,10 @@ sender.addEventListener('click', () => {
     maListe.forEach(function(element){
         console.log(element.name);
     })
+});
+returnBottomBtn.addEventListener('click', () => {
+    scrollToBottom();
+    returnBottom.style.display ='none';
 });
 
 /* #====== OBSERVERS ======#
@@ -82,4 +90,13 @@ function scrollToBottom() {
         top: document.body.scrollHeight - window.innerHeight + 100, // Pour être sur d'aller jusqu'au bout
         behavior: 'smooth' 
     });
+}
+function actionScrollSeuil() {
+    const seuil = document.body.scrollHeight - window.innerHeight*2.5;
+    if (window.scrollY < seuil) {
+        returnBottom.style.display = 'flex';
+    } else 
+    {
+        returnBottom.style.display = 'none';
+    }
 }

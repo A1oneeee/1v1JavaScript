@@ -307,3 +307,48 @@ header .title {
  .errorfile button img{
     width: 35px;
  }
+
+ /* DIV RETURN TO BOTTOM PAGE */
+/*
+ * Div that will be used for going back to the last message when
+ * the user is too hight
+ */
+.returnBottom {
+    position: fixed;
+    left: calc(50% - 22px);
+    bottom: 80px;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    border: solid 2px;
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(65, 65, 65, 0.5);
+
+    width:  44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    transition: opacity 0.5s ease-in-out;
+}
+.returnBottom button {
+    color: none;
+    background-color: transparent;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+}
+.returnBottom img {
+    width: 65%;
+}
