@@ -69,10 +69,6 @@ deposit.addEventListener('drop', (event) => {
         var currentMarginBottom = parseInt(window.getComputedStyle(discussion).marginBottom);
         discussion.style.marginBottom = (currentMarginBottom + 20) + "px";
     }
-    /* SHOW FILES IN CONTENEURS */
-    maListe.forEach(function(element) {
-        ajouterConteneur(element.name);
-    });
 });
 
 /*
@@ -82,15 +78,20 @@ function handleFiles(files) {
     // Traitement des fichiers ici
     let verif = false;
     for (const file of files) {
-        if(file.size > 5000){
+        if(file.size > 50000){
             // The size is too much
             verif = true;
-            continue;
+        } 
+        else {
+            const fileAlreadyExists = maListe.some(existingFile => existingFile.name === file.name && existingFile.size === file.size);
+            if (!fileAlreadyExists) {
+                // Ajouter le fichier à la liste pour l'ajouter à la page
+                maListe.push(file);
+                ajouterConteneur(file.name);
+            }
         }
-        // Add to the list for adding in the page
-        maListe.push(file);
     }
-    if(verif == true){
+    if(verif){
         errorFile.style.display = 'flex';
     }
 }
