@@ -4,7 +4,7 @@
 - Gestion de fichiers trop volumineux (TODO: mettre en place une variable globale pour changer ce nombre)
 - Possibilité de mettre des images dans le chat (gestion de width et height MAX via CSS)
 - Affichage du dernier message envoyé lors du chargement de la page
-- Bouto pour revenir au dernier message de la conversation
+- Bouton pour revenir au dernier message de la conversation
 
 ### Interface de base
 ![image](https://github.com/A1oneeee/1v1JavaScript/assets/116378179/5baca7ca-ea47-48c4-bd53-a1a4a7cd0d78)
@@ -17,3 +17,6 @@
 
 ### Revenir au message le plus récent
 ![image](https://github.com/A1oneeee/1v1JavaScript/assets/116378179/de75f271-d95e-4f4b-9971-3f72037ef26e)
+
+### Ajout des fichiers dans l'interface avec possibilité de suppression
+![image](https://github.com/A1oneeee/1v1JavaScript/assets/116378179/3db6aa48-b575-472e-b61c-4c64d757d878)
