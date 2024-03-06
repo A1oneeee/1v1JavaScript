@@ -1,3 +1,5 @@
+const discussion = document.getElementById('discussion');
+
 const fileDrop = document.getElementById('msg');
 const deposit = document.getElementById('deposit');
 const depositP = document.getElementById('depositP');
@@ -10,6 +12,9 @@ const errorFile = document.getElementById('errorFile');
 const returnBottomBtn = document.getElementById('returnBottomBtn');
 const returnBottom = document.getElementById('returnBottom');
 
+/* DIV FILES TO SEND */
+const storageFiles = document.getElementById('storageFiles');
+
 let maListe = [];
 
 /*
@@ -17,7 +22,6 @@ let maListe = [];
  */
 window.onload = scrollToBottom;
 window.addEventListener('scroll', actionScrollSeuil);
-
 
 
 // Empêcher les événements dragenter et dragover par défaut pour permettre le dépôt
@@ -60,6 +64,15 @@ deposit.addEventListener('drop', (event) => {
 
     const files = event.dataTransfer.files;
     handleFiles(files);
+    if(maListe.length > 0){
+        storageFiles.style.display = 'flex';
+        var currentMarginBottom = parseInt(window.getComputedStyle(discussion).marginBottom);
+        discussion.style.marginBottom = (currentMarginBottom + 20) + "px";
+    }
+    /* SHOW FILES IN CONTENEURS */
+    maListe.forEach(function(element) {
+        ajouterConteneur(element.name);
+    });
 });
 
 /*
@@ -87,10 +100,11 @@ function preventDefaults(event) {
 }
 function scrollToBottom() {
     window.scrollTo({
-        top: document.body.scrollHeight - window.innerHeight + 100, // Pour être sur d'aller jusqu'au bout
+        top: document.body.scrollHeight - window.innerHeight + 100,
         behavior: 'smooth' 
     });
 }
+// TODO: A optimiser
 function actionScrollSeuil() {
     const seuil = document.body.scrollHeight - window.innerHeight*2.5;
     if (window.scrollY < seuil) {
@@ -99,4 +113,40 @@ function actionScrollSeuil() {
     {
         returnBottom.style.display = 'none';
     }
+}
+function supprimerElementParNom(liste, nomElementASupprimer) {
+    return liste.filter(function(element) {
+        return element.name !== nomElementASupprimer;
+    });
+}
+function supprimerConteneur(button) {
+    var conteneur = button.parentNode;
+    var texte = conteneur.querySelector('p').textContent;
+    conteneur.parentNode.removeChild(conteneur);
+
+    maListe = supprimerElementParNom(maListe, texte);
+
+    if(maListe.length == 0){
+        storageFiles.style.display = 'none';
+        var currentMarginBottom = parseInt(window.getComputedStyle(discussion).marginBottom);
+        discussion.style.marginBottom = (currentMarginBottom - 20) + "px";
+    }
+}
+function ajouterConteneur(nomFichier) {
+    var nouveauConteneur = document.createElement('div');
+    nouveauConteneur.classList.add('conteneur');
+
+    var paragraphe = document.createElement('p');
+    paragraphe.textContent = nomFichier;
+
+    // Créer un bouton
+    var bouton = document.createElement('button');
+    bouton.innerHTML = '<img src="assets/traverser.png">';
+    bouton.addEventListener('click', function() {
+        supprimerConteneur(this);
+    });
+    nouveauConteneur.appendChild(paragraphe);
+    nouveauConteneur.appendChild(bouton);
+
+    storageFiles.appendChild(nouveauConteneur);
 }
