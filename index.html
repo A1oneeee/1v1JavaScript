@@ -25,8 +25,13 @@
             </div>
         </div>
     </header>
+
+    <!-- TODO: Mettre en place une side bar pour ajouter les contacts -->
+
+    <!-- -->
+
     <!-- DIV CONTAIN MESSAGES -->
-    <div class="discussion">
+    <div class="discussion" id="discussion">
         <div class="messageRight">
             <p class="me">Bonjour à toi !</p>
             <p class="date_right">10:30</p>
@@ -47,6 +52,14 @@
             <p class="me">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi laboriosam quas reprehenderit quidem rem deleniti itaque voluptatibus molestiae voluptatum tempora. Illo mollitia, aut amet repellat alias voluptatem blanditiis commodi esse.</p>
             <p class="date_right">10:40</p>
         </div>
+        <div class="messageRight">
+            <p class="me"><img src="/assets/JavaScript-logo.png"></p>
+            <p class="date_right">10:40</p>
+        </div>
+        <div class="messageLeft">
+            <p class="cor"><img src="assets/p1.jpg"></p>
+            <p class="date_left">10:35</p>
+        </div>
     </div>
     <!-- DIV SEND MESSAGE -->
     <div class="bottom">
@@ -56,7 +69,7 @@
         </div>
         <form>
             <!-- <input placeholder="Message..." autocomplete="off" id="msg"/> -->
-            <textarea placeholder="Message..." autocomplete="off" id="msg"></textarea>
+            <textarea placeholder="Message ..." autocomplete="off" id="msg"></textarea>
             <button id="sender">Envoyer</button>
         </form>
     </div>

@@ -8,6 +8,14 @@ const errorFile = document.getElementById('errorFile');
 
 let maListe = [];
 
+/*
+ * Load this function when the page is laoded
+ */
+window.onload = scrollToBottom;
+
+
+
+
 // Empêcher les événements dragenter et dragover par défaut pour permettre le dépôt
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
     deposit.addEventListener(eventName, preventDefaults, false);
@@ -69,4 +77,9 @@ function preventDefaults(event) {
     event.preventDefault();
     event.stopPropagation();
 }
-
+function scrollToBottom() {
+    window.scrollTo({
+        top: document.body.scrollHeight - window.innerHeight + 100, // Pour être sur d'aller jusqu'au bout
+        behavior: 'smooth' 
+    });
+}
