@@ -14,6 +14,8 @@ const returnBottom = document.getElementById('returnBottom');
 
 /* DIV FILES TO SEND */
 const storageFiles = document.getElementById('storageFiles');
+let verifDiscussionDecalage = false;
+let boolMarginDiscussion = false;
 
 let maListe = [];
 
@@ -58,16 +60,18 @@ fileDrop.addEventListener('dragenter', (event) => {
     deposit.style.display = 'flex';
 });
 
+// TODO: Corriger le BUG qui augmente en permanance la DIV .discussion
 deposit.addEventListener('drop', (event) => {
     event.preventDefault();
     deposit.style.display = 'none';
 
     const files = event.dataTransfer.files;
     handleFiles(files);
-    if(maListe.length > 0){
+    if(maListe.length > 0 && boolMarginDiscussion === false){
         storageFiles.style.display = 'flex';
         var currentMarginBottom = parseInt(window.getComputedStyle(discussion).marginBottom);
         discussion.style.marginBottom = (currentMarginBottom + 20) + "px";
+        boolMarginDiscussion = true;
     }
 });
 
@@ -110,7 +114,7 @@ function actionScrollSeuil() {
     const seuil = document.body.scrollHeight - window.innerHeight*2.5;
     if (window.scrollY < seuil) {
         returnBottom.style.display = 'flex';
-    } else 
+    } else // TODO: Optimiser le else avec un "else if"
     {
         returnBottom.style.display = 'none';
     }
@@ -131,6 +135,7 @@ function supprimerConteneur(button) {
         storageFiles.style.display = 'none';
         var currentMarginBottom = parseInt(window.getComputedStyle(discussion).marginBottom);
         discussion.style.marginBottom = (currentMarginBottom - 20) + "px";
+        boolMarginDiscussion = false;
     }
 }
 function ajouterConteneur(nomFichier) {
