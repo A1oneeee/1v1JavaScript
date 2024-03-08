@@ -5,6 +5,7 @@ Les premières versions ne gèrent pas les SOCKET. <img src="https://github.com/
 
 ### Version du projet
 - [develop](https://github.com/A1oneeee/1v1JavaScript/tree/develop)
+- [Version 0.3.1](https://github.com/A1oneeee/1v1JavaScript/tree/master_v0.3.1)
 - [Version 0.3](https://github.com/A1oneeee/1v1JavaScript/tree/master_v0.3)
 - [Version 0.2](https://github.com/A1oneeee/1v1JavaScript/tree/master_v0.2)
 - [Version 0.1](https://github.com/A1oneeee/1v1JavaScript/tree/master_v0.1)
