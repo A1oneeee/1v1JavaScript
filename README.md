@@ -12,7 +12,7 @@ Les premières versions ne gèrent pas les SOCKET. <img src="https://github.com/
 - [Version 0.1](https://github.com/A1oneeee/1v1JavaScript/tree/master_v0.1)
 
 ## Technologies utilisées
-- <img src="https://github.com/A1oneeee/1v1JavaScript/assets/116378179/0a89980e-817b-4599-bc19-7a6826b24be3" width="50" />
+- <img src="https://github.com/A1oneeee/1v1JavaScript/assets/116378179/0a89980e-817b-4599-bc19-7a6826b24be3" width="65" />
 - <img src="https://github.com/A1oneeee/1v1JavaScript/assets/116378179/68f79b58-9348-4e18-a07c-7e7c52f53e00" width="65" />
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1200px-ChatGPT_logo.svg.png" width="65" />
 
