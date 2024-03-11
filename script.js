@@ -70,7 +70,7 @@ deposit.addEventListener('drop', (event) => {
     if(maListe.length > 0 && boolMarginDiscussion === false){
         storageFiles.style.display = 'flex';
         var currentMarginBottom = parseInt(window.getComputedStyle(discussion).marginBottom);
-        discussion.style.marginBottom = (currentMarginBottom + 20) + "px";
+        discussion.style.marginBottom = (currentMarginBottom + 25) + "px";
         boolMarginDiscussion = true;
     }
 });
