@@ -7,7 +7,7 @@ Les premières versions ne gèrent pas les SOCKET. <img src="https://github.com/
 - [develop](https://github.com/A1oneeee/1v1JavaScript/tree/develop)
 - [Version 0.4 (non viable)](https://github.com/A1oneeee/1v1JavaScript/tree/master_v0.4)
 
-## Frontend sans la gestion des coversations multiples
+#### Frontend sans la gestion des coversations multiples
 - [Version 0.3.2](https://github.com/A1oneeee/1v1JavaScript/tree/master_v0.3.2)
 - [Version 0.3.1](https://github.com/A1oneeee/1v1JavaScript/tree/master_v0.3.1)
 - [Version 0.3](https://github.com/A1oneeee/1v1JavaScript/tree/master_v0.3)
